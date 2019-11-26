@@ -3,6 +3,7 @@ require('./config/passport-setup')
 
 const express = require('express')
 const authRoutes = require('./routes/auth-routes')
+const profileRoutes = require('./routes/profile-routes')
 const mongoose = require('mongoose')
 const cookieSession = require('cookie-session')
 const passport = require('passport')
@@ -33,6 +34,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/auth', authRoutes)
+app.use('/profile', profileRoutes)
 
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
